@@ -1,0 +1,13 @@
+{
+  "name": "fiche-fiscale",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Une règle de fiscalité d'entreprise française par jour, en ligne et par email.",
+  "devDependencies": {
+    "netlify-cli": "^17.0.0"
+  },
+  "scripts": {
+    "dev": "netlify dev"
+  }
+}

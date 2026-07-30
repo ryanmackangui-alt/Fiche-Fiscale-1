@@ -1,0 +1,16 @@
+[build]
+  publish = "."
+  functions = "netlify/functions"
+
+# 10:00 UTC = 12:00 à Paris en heure d'été (11:00 en heure d'hiver).
+# Pour un midi exact toute l'année, deux options : accepter l'heure glissante,
+# ou passer à "0 10,11 * * *" avec un contrôle du fuseau en début de fonction.
+[functions."envoi-quotidien"]
+  schedule = "0 10 * * *"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "SAMEORIGIN"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
